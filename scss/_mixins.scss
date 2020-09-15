@@ -1,0 +1,24 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin listClear {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin tr {
+    transition: all .3s ease-in;
+}
+
+@mixin hover {
+    @include tr();
+    &:hover,
+    &:focus,
+    &:active {
+        @content; 
+    }
+}
