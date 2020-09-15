@@ -56,9 +56,10 @@ a {
 
 // HEADER
 .header {
-    padding: 2rem 0;
-    outline: 2px solid red;
+    padding-top: 2rem;
+    // outline: 2px solid red;
     background-color: #fff;
+    height: 15rem;
     &__preheader {
         display: flex;
         justify-content: space-between;
@@ -189,5 +190,69 @@ a {
         margin-left: -4rem;
         background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 46C18.2091 46 20 44.2091 20 42C20 39.7909 18.2091 38 16 38C13.7909 38 12 39.7909 12 42C12 44.2091 13.7909 46 16 46Z' stroke='%231AB0CE' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 46C42.2091 46 44 44.2091 44 42C44 39.7909 42.2091 38 40 38C37.7909 38 36 39.7909 36 42C36 44.2091 37.7909 46 40 46Z' stroke='%231AB0CE' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.34 12H46L42.64 28.78C42.2625 30.6805 40.5772 32.0371 38.64 32H17.5C15.479 32.0171 13.7627 30.524 13.5 28.52L10.46 5.48C10.1992 3.49119 8.50583 2.00304 6.5 2H2' stroke='%231AB0CE' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;
+        position: relative;
+        &::before {
+            content: '3';
+            @include flexCenter;
+            color: #fff;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: -.5rem;
+            right: -1.5rem;
+            border-radius: 50%;
+            background-color: $brand-color;
+            // outline: 2px solid red;
+        }
+    }
+    // NAVIGATION
+    &__nav {
+        // outline: 2px solid red;
+        // position: absolute;
+        // bottom: 0;
+        // padding: 1rem 0;
+        margin-top: 0rem;
+        box-shadow: inset 0px 3px 6px -5px rgba(0,0,0,0.75);
+        &--wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            height: 4.5rem;
+            // outline: 2px solid red;
+        }
+        &--link {
+            // padding: 1rem 0;
+            // margin: 0 1rem;
+            @include flexCenter;
+            // height: 0;
+            // width: auto;
+            // margin: 0;
+            // justify-self: stretch;
+            // text-align: center;
+            // width: auto;
+            // outline: 2px solid red;
+            @include hover {
+                // border-top: 1px solid $brand-color;
+                box-shadow: inset 0px 3px 0px 0px $brand-color;
+            }
+        }
+        &--link:not(:last-of-type) {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: bold;
+            // padding: 1rem 0;
+            position: relative;
+            &::after {
+                content: '|';
+                display: inline-block;
+                margin-left: 3rem;
+                color: #E8EDF2;
+                position: absolute;
+                top: 1rem;
+                right: -3.5rem;
+                // outline: 2px solid red;
+            }
+        }
     }
 }
