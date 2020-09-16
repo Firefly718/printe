@@ -5,12 +5,9 @@ $(document).ready(function(){
     });
 });
 
-// search icon in nav menu
-// $(document).ready(function(){
-//   $("body > header > nav > div > div > a:last-child").click(function(){
-//     $("body > header > nav > div > div > a:last-child > input[type=search]").toggle('slow', 'swing');
-//   });
-// });
-
-// document.querySelector("body > header > nav > div > div > a:nth-child(8)")
-// document.querySelector("body > header > nav > div > div > a:nth-child(8) > input[type=search]")
+// Phone list in footer
+$(document).ready(function(){
+  $("body > footer > div > div > div:nth-child(4) > div > div").click(function(){
+    $("body > footer > div > div > div:nth-child(4) > div > div > ul").toggle('slow', 'swing');
+  });
+});
