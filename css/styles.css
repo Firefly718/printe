@@ -329,7 +329,7 @@ html {
 body {
   min-height: 100%;
   font: 1.5rem/1.6 'Open Sans', sans-serif;
-  background-color: #7e7b7b; }
+  background-color: #E5E5E5; }
 
 .container {
   margin: 0 auto;
@@ -477,7 +477,8 @@ a {
       font-size: 1.6rem;
       padding: 1rem;
       -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75); }
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+      z-index: 2; }
       .header__phone--list::before {
         content: '';
         position: absolute;
@@ -489,7 +490,8 @@ a {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         -o-transform: rotate(45deg);
-        transform: rotate(45deg); }
+        transform: rotate(45deg);
+        z-index: 2; }
     .header__phone--item {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -549,9 +551,20 @@ a {
       border-radius: 50%;
       background-color: #1AB0CE; }
   .header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-top: 0rem;
     -webkit-box-shadow: inset 0px 3px 6px -5px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 3px 6px -5px rgba(0, 0, 0, 0.75); }
+    box-shadow: inset 0px 3px 6px -5px rgba(0, 0, 0, 0.75);
+    position: relative;
+    z-index: 1; }
     .header__nav--wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -559,10 +572,9 @@ a {
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-      align-items: stretch;
-      height: 4.5rem; }
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
     .header__nav--link {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -573,23 +585,52 @@ a {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding-top: 1.1rem;
+      position: relative;
       -webkit-transition: all .3s ease-in;
       -o-transition: all .3s ease-in;
       transition: all .3s ease-in; }
       .header__nav--link:hover, .header__nav--link:focus, .header__nav--link:active {
         -webkit-box-shadow: inset 0px 3px 0px 0px #1AB0CE;
         box-shadow: inset 0px 3px 0px 0px #1AB0CE; }
-    .header__nav--link:not(:last-of-type) {
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 1.6rem;
-      font-weight: bold;
-      position: relative; }
-      .header__nav--link:not(:last-of-type)::after {
-        content: '|';
-        display: inline-block;
-        margin-left: 3rem;
-        color: #E8EDF2;
-        position: absolute;
-        top: 1rem;
-        right: -3.5rem; }
+    .header__nav--link:not(:last-of-type)::after {
+      content: '|';
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      color: #E8EDF2;
+      position: absolute;
+      top: 1rem;
+      right: -.4rem; }
+    .header__nav--link:last-child {
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z' stroke='%233A4047' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 19L13.8 13.8' stroke='%233A4047' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      height: 3.5rem;
+      width: 1rem;
+      background-position: 50% center;
+      margin-right: -3rem;
+      padding-top: .8rem;
+      margin-top: .4rem;
+      outline: none;
+      border: none;
+      -webkit-transition: all .3s ease-in;
+      -o-transition: all .3s ease-in;
+      transition: all .3s ease-in; }
+      .header__nav--link:last-child:hover, .header__nav--link:last-child:focus, .header__nav--link:last-child:active {
+        width: 20rem;
+        background-position: 90% center;
+        margin-top: 0rem; }
+    .header__nav--link:first-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }

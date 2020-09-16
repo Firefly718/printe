@@ -25,7 +25,7 @@ Header, Main, Products, About, News - Clear Sans
 Footer - Roboto, Clear Sans, Cuprum */
 
 
-// GENERAL SETTING
+// ------------------------------------------------------- GENERAL SETTING
 * {
     box-sizing: border-box;
 }
@@ -38,7 +38,7 @@ html {
 body {
     min-height: 100%;
     font: 1.5rem/1.6 'Open Sans', sans-serif;
-    background-color: rgb(126, 123, 123);
+    background-color: #E5E5E5;
 }
 
 .container {
@@ -54,7 +54,7 @@ a {
     }
 }
 
-// HEADER
+// -------------------------------------------------------- HEADER
 .header {
     padding-top: 2rem;
     // outline: 2px solid red;
@@ -153,6 +153,7 @@ a {
             font-size: 1.6rem;
             padding: 1rem;
             box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+            z-index: 2;
             &::before {
                 content: '';
                 position: absolute;
@@ -163,6 +164,7 @@ a {
                 height: 2.8rem;
                 background-color: #fff;
                 transform: rotate(45deg);
+                z-index: 2;
             }
         }
         &--item {
@@ -205,54 +207,67 @@ a {
             // outline: 2px solid red;
         }
     }
-    // NAVIGATION
+    // -------------------------------------------------- NAVIGATION
     &__nav {
         // outline: 2px solid red;
-        // position: absolute;
-        // bottom: 0;
-        // padding: 1rem 0;
+        @include flexCenter;
         margin-top: 0rem;
         box-shadow: inset 0px 3px 6px -5px rgba(0,0,0,0.75);
+        position: relative;
+        z-index: 1;
+        // height: 3rem;
         &--wrapper {
             display: flex;
             justify-content: space-between;
-            align-items: stretch;
-            height: 4.5rem;
+            align-items: center;
             // outline: 2px solid red;
         }
         &--link {
-            // padding: 1rem 0;
-            // margin: 0 1rem;
             @include flexCenter;
-            // height: 0;
-            // width: auto;
-            // margin: 0;
-            // justify-self: stretch;
-            // text-align: center;
-            // width: auto;
+            flex-grow: 1;
             // outline: 2px solid red;
-            @include hover {
-                // border-top: 1px solid $brand-color;
-                box-shadow: inset 0px 3px 0px 0px $brand-color;
-            }
-        }
-        &--link:not(:last-of-type) {
             text-transform: uppercase;
             text-decoration: none;
             font-size: 1.6rem;
             font-weight: bold;
-            // padding: 1rem 0;
+            padding-top: 1.1rem;
             position: relative;
+            @include hover {
+                box-shadow: inset 0px 3px 0px 0px $brand-color;
+            }
+        }
+        &--link:not(:last-of-type) {
+            // border-right: 1px solid #E8EDF2;
             &::after {
                 content: '|';
-                display: inline-block;
-                margin-left: 3rem;
+                display: flex;
                 color: #E8EDF2;
                 position: absolute;
                 top: 1rem;
-                right: -3.5rem;
-                // outline: 2px solid red;
+                right: -.4rem;
             }
+        }
+        &--link:last-child {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z' stroke='%233A4047' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 19L13.8 13.8' stroke='%233A4047' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            height: 3.5rem;
+            width: 1rem;
+            background-position: 50% center;
+            margin-right: -3rem;
+            padding-top: .8rem;
+            margin-top: .4rem;
+            outline: none;
+            border: none;
+            @include hover {
+                width: 20rem;
+                background-position: 90% center;
+                margin-top: 0rem;
+            }
+
+        }
+        &--link:first-child {
+            display: flex;
+            justify-content: flex-start;
         }
     }
 }
